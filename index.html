@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/sass/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Quizizy</title>
+</head>
+
+<body class="">
+    <div class="wrapper-stepper ">
+        <div class="steep">
+            <div class="steps">1</div>
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+        </div>
+    </div>
+    <section class="information-page" id="information-page">
+        <div class="wrapper">
+            <div class=" container d-flex align-items-center justify-content-center">
+                <div class="quiz-continare ">
+                    <div classe="quiz-head" id="head">
+                        <div class="quiz-title">
+                            <h1>Quizizy</h1>
+                            <img src="assets/img/aws-logo.png" alt="Amazon-logo" width="100px" class="aws-logo">
+                        </div>
+
+                    </div>
+                    <div class="quiz-body">
+                        <h2 class="quiz-question" id="Welcome">Welcome to this aws quizz where you can test your AWS Practitioner knowledge
+                        </h2>
+                        <ul class="informtion">
+                            <li class="selected"> Amazon EC2 costs are billed on a monthly basis.</li>
+                            <li>Users retain flil administrative access to their Amazon EC2 instances.</li>
+                            <li>Amazon EC2 instances can be launched on demand when needed.</li>
+                            <li>Users can permanently run enough instances to handle peak workloads.</li>
+                        </ul>
+
+                    </div>
+                    <div class="quiz-foot">
+                        <button type="button" id="start" onclick="startQuiz()">start quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container" id="question-quiz">
+        <div class="">
+            <div class="wrapper">
+                <div class=" container d-flex align-items-center justify-content-center">
+                    <div class="quiz-continare ">
+                        <div classe="quiz-head">
+                            <div class="quiz-title">
+                                <h1>Quizizy</h1>
+                                <img src="assets/img/aws-logo.png" alt="Amazon-logo" width="100px" class="aws-logo">
+                            </div>
+                            <div class="quiz-score flex">
+                                <span id="score">0</span><span>/</span><span id="totale-question">10</span>
+                            </div>
+                        </div>
+                        <div class="quiz-body btn-grid">
+                            <h2 class="quiz-question" id="question">Why is AWS more economical than traditional
+                            </h2>
+                            <ul class="quiz-options" id="answers-btn">
+                                <li class="selected"> Amazon EC2 costs are billed on a monthly basis.</li>
+                                <li class="selected">Users retain flil administrative access to their Amazon EC2 instances.</li>
+                                <li class="selected">Amazon EC2 instances can be launched on demand when needed.</li>
+                                <li class="selected">Users can permanently run enough instances to handle peak workloads.</li>
+                            </ul>
+
+                        </div>
+                        <div class="quiz-foot">
+                            <button type="button" id="next">Next question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/data.js"></script>
+</body>
+
+</html>
