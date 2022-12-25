@@ -58,7 +58,7 @@ body {
             list-style-type: none;
             margin: 1rem 0;
             padding: 0;
-            li {
+            .selected {
                 border-radius: .5rem;
                 font-weight: 600;
                 margin: 1rem 0;
@@ -70,9 +70,6 @@ body {
                 }
                 &:active {
                     transform: scale(0.97);
-                }
-                .selected {
-                    @extend %hover;
                 }
             }
         }
@@ -103,18 +100,21 @@ body {
         }
     }
     @media (max-width: 678px) {
-        .quiz-title {
-            font-size: 1.6rem
-        }
-        .quiz-foot {
-            font-size: 1rem;
-        }
-        .wrapper {
-            margin: 3rem 0;
-            padding: 1.5rem 1rem 3rem 1rem;
-        }
         .container {
             width: 90%;
+            .wrapper {
+                margin: 3rem 0;
+                padding: 1.5rem 1rem 3rem 1rem;
+                .quiz-title {
+                    font-size: 1.6rem
+                }
+                .quiz-options {
+                    font-size: .8rem;
+                }
+                .quiz-foot {
+                    font-size: 1rem;
+                }
+            }
         }
     }
     .wrapper-stepper {

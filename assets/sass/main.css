@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,400&display=swap");
-body .container .quiz-options li .selected, body .container .quiz-options li:hover {
+body .container .quiz-options .selected:hover {
   background-color: #527fff;
 }
 
@@ -40,7 +40,7 @@ body .container .quiz-options {
   margin: 1rem 0;
   padding: 0;
 }
-body .container .quiz-options li {
+body .container .quiz-options .selected {
   border-radius: 0.5rem;
   font-weight: 600;
   margin: 1rem 0;
@@ -49,7 +49,7 @@ body .container .quiz-options li {
   border: 3px solid #527fff;
   box-shadow: 0 4px 10px 0 #527fff;
 }
-body .container .quiz-options li:active {
+body .container .quiz-options .selected:active {
   transform: scale(0.97);
 }
 body .container .quiz-foot button {
@@ -76,18 +76,21 @@ body .container .quiz-foot button:hover {
   transform: scale(0.96);
 }
 @media (max-width: 678px) {
-  body .quiz-title {
-    font-size: 1.6rem;
+  body .container {
+    width: 90%;
   }
-  body .quiz-foot {
-    font-size: 1rem;
-  }
-  body .wrapper {
+  body .container .wrapper {
     margin: 3rem 0;
     padding: 1.5rem 1rem 3rem 1rem;
   }
-  body .container {
-    width: 90%;
+  body .container .wrapper .quiz-title {
+    font-size: 1.6rem;
+  }
+  body .container .wrapper .quiz-options {
+    font-size: 0.8rem;
+  }
+  body .container .wrapper .quiz-foot {
+    font-size: 1rem;
   }
 }
 body .wrapper-stepper {
