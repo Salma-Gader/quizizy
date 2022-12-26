@@ -81,7 +81,7 @@ const question = [{
     {
         question: ' Which service would be used to send alerts based on Amazon CloudWatch alarms?',
         options: [
-            { text: 'Amazon Simple Notification Service (Amazon SNS). ', corect: true },
+            { text: 'Amazon Simple Notification Service (Amazon SNS). ', correct: true },
             { text: 'AWS CloudTrail.', correct: false },
             { text: ' AWS Trusted Advisor.', correct: false },
             { text: 'Amazon Route 53.', correct: false },

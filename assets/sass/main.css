@@ -52,6 +52,12 @@ body .container .quiz-options .selected {
 body .container .quiz-options .selected:active {
   transform: scale(0.97);
 }
+body .container .quiz-options .wrong {
+  background-color: red;
+}
+body .container .quiz-options .correct {
+  background-color: green;
+}
 body .container .quiz-foot button {
   border: none;
   border-radius: 0.5rem;
@@ -110,7 +116,7 @@ body .wrapper-stepper .steep::before {
   content: "";
   height: 100%;
   width: 0.3rem;
-  background-color: #527fff;
+  background-color: white;
   position: absolute;
   z-index: -1;
 }
