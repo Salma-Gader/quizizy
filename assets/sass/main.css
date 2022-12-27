@@ -20,14 +20,19 @@ body .container .quiz-title {
   font-size: 2rem;
 }
 body .container .quiz-score {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
   font-size: 1.2rem;
-  border: 5px solid #527fff;
   font-weight: bold;
-  width: 100px;
-  margin: 1.5rem auto;
   color: #527fff;
+  margin: 80px;
+}
+body .container .quiz-score #progress {
+  transition: 0.5s;
+  width: 50%;
+  margin-left: 2%;
 }
 body .container .quiz-question {
   font-size: 1.2rem;

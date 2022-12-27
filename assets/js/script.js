@@ -12,9 +12,18 @@ let Circle2 = document.getElementById("Circle2");
 let Circle3 = document.getElementById("Circle3");
 let steps = document.getElementById("steps");
 let score = document.getElementById("score");
+let resulthtml = document.getElementById("result");
+let progress = document.getElementById("progress");
+// const resultBotton = document.querySelector(".example")
+let result = 0;
+let justification = [];
 nextButton.addEventListener('click', () => {
     currentQustionIndex++
+    if (currentQustionIndex > 9) {
+        pageQuestion.style.display = "none"
+    }
     setNextQuetion()
+
 })
 
 //functions***
@@ -32,6 +41,8 @@ function startQuiz() {
 function setNextQuetion() {
     resetOptions()
     showQuestuion(randomQuestion[currentQustionIndex])
+    progress.value += 10
+
 }
 
 function showQuestuion(question) {
@@ -47,6 +58,7 @@ function showQuestuion(question) {
         answrsElement.appendChild(button)
     });
     score.innerHTML = currentQustionIndex + 1
+
 }
 
 function resetOptions() {
@@ -58,7 +70,15 @@ function resetOptions() {
 
 function selectAnswer(e) {
     const selectBotton = e.target
+        // console.log(selectBotton)
     const correct = selectBotton.dataset.correct
+    if (correct) {
+        result++
+        resulthtml.innerText = result
+    } else {
+        justification.push()
+    }
+    // console.log(selectBotton)
     setsStatusclass(document.body, correct)
     Array.from(answrsElement.children).forEach(button => {
         setsStatusclass(button, button.dataset.correct)
@@ -70,12 +90,21 @@ function setsStatusclass(element, correct) {
     clearStatusclass(element)
     if (correct) {
         element.classList.add('correct')
+
+
     } else {
         element.classList.add('wrong')
+
+
     }
 }
 
 function clearStatusclass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
+}
+
+function reult() {
+
+
 }

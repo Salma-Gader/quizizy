@@ -37,16 +37,26 @@ body {
         .quiz-title {
             text-align: center;
             font-size: 2rem;
+            .aws-logo {
+                // height: 20px;
+                // object-fit: cover
+            }
         }
         .quiz-score {
-            text-align: center;
+            @include center;
             font-weight: 600;
             font-size: 1.2rem;
-            border: 5px solid $border-color;
+            // border: 5px solid $border-color;
             font-weight: bold;
-            width: 100px;
-            margin: 1.5rem auto;
+            // width: 100px;
+            // margin: 1.5rem auto;
             color: $border-color;
+            margin: 80px;
+            #progress {
+                transition: 0.5s;
+                width: 50%;
+                margin-left: 2%;
+            }
         }
         .quiz-question {
             font-size: 1.2rem;
