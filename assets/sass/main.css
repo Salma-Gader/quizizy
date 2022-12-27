@@ -13,7 +13,6 @@ body {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 body .container .quiz-title {
   text-align: center;
@@ -23,6 +22,7 @@ body .container .quiz-score {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-weight: 600;
   font-size: 1.2rem;
   font-weight: bold;
@@ -46,11 +46,11 @@ body .container .quiz-options {
   padding: 0;
 }
 body .container .quiz-options .selected {
-  border-radius: 0.5rem;
   font-weight: 600;
   margin: 1rem 0;
   padding: 1rem 1.2rem;
   cursor: pointer;
+  border-radius: 0.5rem;
   border: 3px solid #527fff;
   box-shadow: 0 4px 10px 0 #527fff;
 }
@@ -135,6 +135,7 @@ body .wrapper-stepper .steep .steps {
 }
 body .wrapper-stepper .steep .circle {
   background-color: rgb(13, 13, 13);
+  border-radius: 0.5rem;
   border: 3px solid #527fff;
   box-shadow: 0 4px 10px 0 #527fff;
   border-radius: 100%;
@@ -152,6 +153,7 @@ body #head {
   margin-bottom: 40px;
 }
 body .informtion {
+  border-radius: 0.5rem;
   border: 3px solid #527fff;
   box-shadow: 0 4px 10px 0 #527fff;
   border-radius: 0.5rem;
@@ -160,4 +162,26 @@ body .informtion {
 }
 body .informtion li {
   margin-bottom: 40px;
+}
+body #page-result {
+  font-size: 2rem;
+  font-weight: 800;
+  padding-top: 40px;
+}
+body #page-result .comment {
+  text-align: center;
+  color: #ec7211;
+  margin-bottom: 40px;
+}
+body #page-result .score {
+  width: 20rem;
+  padding: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  border: 3px solid #527fff;
+  box-shadow: 0 4px 10px 0 #527fff;
 }/*# sourceMappingURL=main.css.map */

@@ -1,11 +1,13 @@
 //variables***
 let pageInfo = document.getElementById("information-page");
 let pageQuestion = document.getElementById("question-quiz");
+let pageResult = document.getElementById("page-result");
 let startButton = document.getElementById("start");
 let randomQuestion, currentQustionIndex;
 const questionElement = document.getElementById("question")
 const answrsElement = document.getElementById("answers-btn")
 const nextButton = document.getElementById("next")
+const explecation = document.getElementById("explecation")
 pageQuestion.style.display = "none";
 
 let Circle2 = document.getElementById("Circle2");
@@ -14,13 +16,19 @@ let steps = document.getElementById("steps");
 let score = document.getElementById("score");
 let resulthtml = document.getElementById("result");
 let progress = document.getElementById("progress");
-// const resultBotton = document.querySelector(".example")
+let comment = document.getElementById("comment");
+let ex = 0
+    // const resultBotton = document.querySelector(".example")
 let result = 0;
 let justification = [];
+pageResult.style.display = "none"
 nextButton.addEventListener('click', () => {
     currentQustionIndex++
     if (currentQustionIndex > 9) {
         pageQuestion.style.display = "none"
+        pageResult.style.display = "block"
+        Circle3.classList.add('active')
+        steps.style.height = 17 + "rem"
     }
     setNextQuetion()
 
@@ -32,7 +40,7 @@ function startQuiz() {
     currentQustionIndex = 0;
     pageQuestion.style.display = "block";
     pageInfo.style.display = "none";
-
+    pageResult.style.display = "none";
     setNextQuetion();
     Circle2.classList.add('active')
     steps.style.height = 8.5 + "rem"
@@ -70,15 +78,23 @@ function resetOptions() {
 
 function selectAnswer(e) {
     const selectBotton = e.target
-        // console.log(selectBotton)
     const correct = selectBotton.dataset.correct
     if (correct) {
         result++
         resulthtml.innerText = result
+        if (result >= 8) {
+            comment.innerText = "Great job"
+        } else if (result >= 5) {
+            comment.innerText = "good job"
+        } else {
+            comment.innerText = "bad job"
+        }
     } else {
-        justification.push()
+        // justification.push()
+        ex++
+        explecation.innerHTML = ex
+
     }
-    // console.log(selectBotton)
     setsStatusclass(document.body, correct)
     Array.from(answrsElement.children).forEach(button => {
         setsStatusclass(button, button.dataset.correct)
@@ -94,8 +110,6 @@ function setsStatusclass(element, correct) {
 
     } else {
         element.classList.add('wrong')
-
-
     }
 }
 

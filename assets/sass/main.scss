@@ -8,6 +8,7 @@ $cursor: pointer;
 $transition: all 300ms ease-in-out;
 // $font-family: 'poppins',
 @mixin border-shadow {
+    border-radius: .5rem;
     border: 3px solid $border-color;
     box-shadow: 0 4px 10px 0 #527fff;
 }
@@ -20,6 +21,7 @@ $transition: all 300ms ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 body {
@@ -32,7 +34,6 @@ body {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center;
     .container {
         .quiz-title {
             text-align: center;
@@ -69,7 +70,6 @@ body {
             margin: 1rem 0;
             padding: 0;
             .selected {
-                border-radius: .5rem;
                 font-weight: 600;
                 margin: 1rem 0;
                 padding: 1rem 1.2rem;
@@ -196,6 +196,23 @@ body {
         padding: 40px;
         li {
             margin-bottom: 40px;
+        }
+    }
+    #page-result {
+        font-size: 2rem;
+        font-weight: 800;
+        padding-top: 40px;
+        .comment {
+            text-align: center;
+            color: $button-color;
+            margin-bottom: 40px;
+        }
+        .score {
+            width: 20rem;
+            padding: 4%;
+            @include center;
+            flex-direction: column;
+            @include border-shadow;
         }
     }
 }
