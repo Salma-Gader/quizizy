@@ -15,8 +15,12 @@ body {
   justify-content: center;
 }
 body .container .quiz-title {
+  margin-top: 1rem;
   text-align: center;
   font-size: 2rem;
+}
+body .container .quiz-title .quizizy {
+  margin-bottom: -0.5rem;
 }
 body .container .quiz-score {
   display: flex;
@@ -58,10 +62,10 @@ body .container .quiz-options .selected:active {
   transform: scale(0.97);
 }
 body .container .quiz-options .wrong {
-  background-color: red;
+  background-color: rgba(242, 7, 78, 0.3);
 }
 body .container .quiz-options .correct {
-  background-color: green;
+  background-color: rgba(0, 255, 0, 0.537);
 }
 body .container .quiz-foot button {
   border: none;

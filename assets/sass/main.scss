@@ -36,8 +36,12 @@ body {
     justify-content: center;
     .container {
         .quiz-title {
+            margin-top: 1rem;
             text-align: center;
             font-size: 2rem;
+            .quizizy {
+                margin-bottom: -0.5rem;
+            }
             .aws-logo {
                 // height: 20px;
                 // object-fit: cover
@@ -83,10 +87,12 @@ body {
                 }
             }
             .wrong {
-                background-color: red;
+                background-color: rgba(242, 7, 78, 0.3);
+                // opacity: 0.5;
             }
             .correct {
-                background-color: green;
+                background-color: rgba(0, 255, 0, 0.537);
+                // opacity: 0.5;
             }
         }
         .quiz-foot {
@@ -178,13 +184,6 @@ body {
                 transition: 0.3s;
             }
         }
-        // .line {
-        //     left: 12px;
-        //     top: 30px;
-        //     height: 100%;
-        //     position: absolute;
-        //     @include border-shadow;
-        // }
     }
     #head {
         margin-bottom: 40px;

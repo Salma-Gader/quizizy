@@ -17,10 +17,11 @@ let score = document.getElementById("score");
 let resulthtml = document.getElementById("result");
 let progress = document.getElementById("progress");
 let comment = document.getElementById("comment");
-let ex = 0
+let ex = []
     // const resultBotton = document.querySelector(".example")
 let result = 0;
 let justification = [];
+let questions = [];
 pageResult.style.display = "none"
 nextButton.addEventListener('click', () => {
     currentQustionIndex++
@@ -29,6 +30,7 @@ nextButton.addEventListener('click', () => {
         pageResult.style.display = "block"
         Circle3.classList.add('active')
         steps.style.height = 17 + "rem"
+
     }
     setNextQuetion()
 
@@ -62,8 +64,10 @@ function showQuestuion(question) {
         if (option.correct) {
             button.dataset.correct = option.correct
         }
+
         button.addEventListener('click', selectAnswer)
         answrsElement.appendChild(button)
+
     });
     score.innerHTML = currentQustionIndex + 1
 
@@ -80,6 +84,7 @@ function selectAnswer(e) {
     const selectBotton = e.target
     const correct = selectBotton.dataset.correct
     if (correct) {
+
         result++
         resulthtml.innerText = result
         if (result >= 8) {
@@ -90,9 +95,13 @@ function selectAnswer(e) {
             comment.innerText = "bad job"
         }
     } else {
-        // justification.push()
-        ex++
-        explecation.innerHTML = ex
+        justification.push(question[currentQustionIndex].explication)
+        questions.push(question[currentQustionIndex].question)
+        ex.push(questions, justification)
+
+        ex.forEach(element => {
+
+        });
 
     }
     setsStatusclass(document.body, correct)
@@ -116,9 +125,4 @@ function setsStatusclass(element, correct) {
 function clearStatusclass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
-}
-
-function reult() {
-
-
 }
