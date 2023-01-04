@@ -17,11 +17,13 @@ let score = document.getElementById("score");
 let resulthtml = document.getElementById("result");
 let progress = document.getElementById("progress");
 let comment = document.getElementById("comment");
+let explication = document.getElementById("explication");
 let ex = []
     // const resultBotton = document.querySelector(".example")
 let result = 0;
 let justification = [];
 let questions = [];
+let questionsObject;
 pageResult.style.display = "none"
 nextButton.addEventListener('click', () => {
     currentQustionIndex++
@@ -29,7 +31,8 @@ nextButton.addEventListener('click', () => {
         pageQuestion.style.display = "none"
         pageResult.style.display = "block"
         Circle3.classList.add('active')
-        steps.style.height = 17 + "rem"
+        steps.style.height = 17 + "rem";
+        resultAnswers();
 
     }
     setNextQuetion()
@@ -37,8 +40,48 @@ nextButton.addEventListener('click', () => {
 })
 
 //functions***
+// function getQuestion() {
+//     let request = new XMLHttpRequest();
+//     request.onreadystatechange = function() {
+//         // try {
+//         if (this.readyState === 4 && this.status === 200) {
+//             questionsObject = JSON.parse(this.responseText)
+//             console.log(questionsObject);
+//         }
+
+//         // } catch (err) {
+//         //     console.error(err.message);
+//         // }
+//         // console.log(questionsObject);
+
+//     }
+//     request.open("GET", "controllers/data.php", true);
+//     request.send();
+//     // return questionsObject;
+// }
+
+// Console.log(getQuestion());
+function getQuestion() {
+    let myRequest = new XMLHttpRequest();
+    myRequest.onreadystatechange = function() {
+        try {
+            questionsObject = JSON.parse(this.responseText);
+        } catch (err) {
+            console.log(err.message)
+        }
+    }
+    myRequest.open("GET", "controllers/data.php", true);
+    myRequest.send();
+    /* Logging the result of the function. */
+    console.log(questionsObject)
+}
+
+getQuestion()
+
+
 function startQuiz() {
-    randomQuestion = question.sort(() => Math.random() - .5);
+
+    randomQuestion = questionsObject.sort(() => Math.random() - .5)
     currentQustionIndex = 0;
     pageQuestion.style.display = "block";
     pageInfo.style.display = "none";
@@ -49,8 +92,11 @@ function startQuiz() {
 }
 
 function setNextQuetion() {
+
+    explication.innerText = '';
     resetOptions()
     showQuestuion(randomQuestion[currentQustionIndex])
+        // showQuestuion(questionsObject[0])
     progress.value += 10
 
 }
@@ -95,13 +141,28 @@ function selectAnswer(e) {
             comment.innerText = "bad job"
         }
     } else {
-        justification.push(question[currentQustionIndex].explication)
-        questions.push(question[currentQustionIndex].question)
-        ex.push(questions, justification)
+        // justification.push(question[currentQustionIndex].explication)
+        // questions.push(question[currentQustionIndex].question)
+        // console.log(ex)
 
-        ex.forEach(element => {
+        // const para = document.createElement('p')
+        // explication.innerText = question[currentQustionIndex].explication
+        // answrsElement.appendChild(para)
 
-        });
+        // ex[0].forEach(question => {
+        //     const para = document.createElement('p')
+        //     para.innerText = question
+        //     answrsElement.appendChild(para)
+        //     console.log(para)
+
+        // });
+        // ex[1].forEach(explicatio => {
+        //     const para = document.createElement('p')
+        //     para.innerText = explicatio
+        //     answrsElement.appendChild(para)
+        //     console.log(para)
+
+        // });
 
     }
     setsStatusclass(document.body, correct)
@@ -125,4 +186,20 @@ function setsStatusclass(element, correct) {
 function clearStatusclass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
+}
+
+function resultAnswers() {
+    ex.push(questions, justification)
+    resultElement = document.querySelector('#you');
+    // for (let answer in ex) {
+    //     resultElement.innerText = answer[0]
+    // }
+    for (let answer of ex) { resultElement.innerText += answer[0] }
+    for (let index = 0; index < questions.length; index++) {
+
+        // resultElement.innerText += questions[index];
+        // resultElement.innerText += questions[index];
+        document.querySelector('#parent').innerHTML += `<p>${questions[index]}</p>`
+
+    }
 }
