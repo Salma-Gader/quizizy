@@ -62,10 +62,14 @@ body .container .quiz-options .selected:active {
   transform: scale(0.97);
 }
 body .container .quiz-options .wrong {
-  background-color: rgba(242, 7, 78, 0.3);
+  border-radius: 0.5rem;
+  border: 3px solid red;
+  box-shadow: 0 4px 10px 0 red;
 }
 body .container .quiz-options .correct {
-  background-color: rgba(0, 255, 0, 0.537);
+  border-radius: 0.5rem;
+  border: 3px solid green;
+  box-shadow: 0 4px 10px 0 green;
 }
 body .container .quiz-foot button {
   border: none;
@@ -168,24 +172,73 @@ body .informtion li {
   margin-bottom: 40px;
 }
 body #page-result {
-  font-size: 2rem;
-  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding-top: 40px;
+  flex-direction: column;
+  text-align: center;
 }
 body #page-result .comment {
+  font-size: 2rem;
+  font-weight: 800;
   text-align: center;
   color: #ec7211;
   margin-bottom: 40px;
 }
 body #page-result .score {
-  width: 20rem;
+  font-size: 2rem;
+  font-weight: 800;
+  width: 50rem;
   padding: 4%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 4rem;
   border-radius: 0.5rem;
   border: 3px solid #527fff;
   box-shadow: 0 4px 10px 0 #527fff;
+}
+body #page-result .score .result {
+  color: #527fff;
+}
+body #page-result .tt {
+  margin-top: 0;
+  text-align: start;
+  border: solid 0.7px rgba(255, 255, 255, 0.3333333333);
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 20px 0px;
+  margin-bottom: 1rem;
+}
+body #page-result .cc {
+  color: #DB2929;
+  margin-top: 0;
+  text-align: start;
+  border: solid 0.7px rgba(255, 255, 255, 0.3333333333);
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 20px 0px;
+  margin-bottom: 1rem;
+}
+body #page-result .ex {
+  border-radius: 0.5rem;
+  border: 3px solid #527fff;
+  box-shadow: 0 4px 10px 0 #527fff;
+}
+body #page-result .ex .w-q {
+  background-color: black !important;
+  color: red;
+}
+body #page-result .ex .explication {
+  background-color: black !important;
+  color: white;
+}
+body #page-result #parent {
+  margin-top: 2rem;
+  color: #ec7211;
+}
+body #page-result #parent .w-a {
+  font-size: 1.8rem;
+  font-weight: 600;
 }/*# sourceMappingURL=main.css.map */

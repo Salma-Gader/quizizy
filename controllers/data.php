@@ -39,6 +39,7 @@ class ViewQuestion extends showQuestion {
             $res .= '
             {
                 "question":"'.$data['question'].'",
+                "explication":"'.$data['explication'].'",
                 "options": [ 
                                 { "text": "'.$data['optionA'].'", "correct": ';
 
@@ -77,6 +78,6 @@ class ViewQuestion extends showQuestion {
 }
 $questions = new ViewQuestion();
 $qq =$questions ->showAllQuestions();
-// var_dump($qq)
+
 
 ?>

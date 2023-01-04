@@ -6,7 +6,6 @@ $texte-color1: wght;
 $texte-color2: white;
 $cursor: pointer;
 $transition: all 300ms ease-in-out;
-// $font-family: 'poppins',
 @mixin border-shadow {
     border-radius: .5rem;
     border: 3px solid $border-color;
@@ -42,19 +41,12 @@ body {
             .quizizy {
                 margin-bottom: -0.5rem;
             }
-            .aws-logo {
-                // height: 20px;
-                // object-fit: cover
-            }
         }
         .quiz-score {
             @include center;
             font-weight: 600;
             font-size: 1.2rem;
-            // border: 5px solid $border-color;
             font-weight: bold;
-            // width: 100px;
-            // margin: 1.5rem auto;
             color: $border-color;
             margin: 80px;
             #progress {
@@ -87,12 +79,14 @@ body {
                 }
             }
             .wrong {
-                background-color: rgba(242, 7, 78, 0.3);
-                // opacity: 0.5;
+                border-radius: .5rem;
+                border: 3px solid red;
+                box-shadow: 0 4px 10px 0 red;
             }
             .correct {
-                background-color: rgba(0, 255, 0, 0.537);
-                // opacity: 0.5;
+                border-radius: .5rem;
+                border: 3px solid green;
+                box-shadow: 0 4px 10px 0 green;
             }
         }
         .quiz-foot {
@@ -140,9 +134,6 @@ body {
         }
     }
     .wrapper-stepper {
-        // padding-top: 38vh;
-        // padding-left: 100px;
-        // margin-left: 10vw;
         position: fixed;
         top: 40%;
         left: 7%;
@@ -198,20 +189,67 @@ body {
         }
     }
     #page-result {
-        font-size: 2rem;
-        font-weight: 800;
+        @include center;
         padding-top: 40px;
+        flex-direction: column;
+        text-align: center;
         .comment {
+            font-size: 2rem;
+            font-weight: 800;
             text-align: center;
             color: $button-color;
             margin-bottom: 40px;
         }
         .score {
-            width: 20rem;
+            font-size: 2rem;
+            font-weight: 800;
+            width: 50rem;
             padding: 4%;
-            @include center;
-            flex-direction: column;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 4rem;
             @include border-shadow;
+            .result {
+                color: #527fff;
+            }
+        }
+        .tt {
+            margin-top: 0;
+            text-align: start;
+            border: solid 0.7px #fff5;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 20px 0px;
+            margin-bottom: 1rem;
+        }
+        .cc {
+            color: #DB2929;
+            margin-top: 0;
+            text-align: start;
+            border: solid 0.7px #fff5;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 20px 0px;
+            margin-bottom: 1rem;
+        }
+        .ex {
+            @include border-shadow;
+            .w-q {
+                background-color: black !important;
+                color: red;
+            }
+            .explication {
+                background-color: black !important;
+                color: white;
+            }
+        }
+        #parent {
+            margin-top: 2rem;
+            color: $button-color;
+            .w-a {
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
         }
     }
 }

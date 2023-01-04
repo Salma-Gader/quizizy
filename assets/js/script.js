@@ -19,7 +19,6 @@ let progress = document.getElementById("progress");
 let comment = document.getElementById("comment");
 let explication = document.getElementById("explication");
 let ex = []
-    // const resultBotton = document.querySelector(".example")
 let result = 0;
 let justification = [];
 let questions = [];
@@ -39,28 +38,6 @@ nextButton.addEventListener('click', () => {
 
 })
 
-//functions***
-// function getQuestion() {
-//     let request = new XMLHttpRequest();
-//     request.onreadystatechange = function() {
-//         // try {
-//         if (this.readyState === 4 && this.status === 200) {
-//             questionsObject = JSON.parse(this.responseText)
-//             console.log(questionsObject);
-//         }
-
-//         // } catch (err) {
-//         //     console.error(err.message);
-//         // }
-//         // console.log(questionsObject);
-
-//     }
-//     request.open("GET", "controllers/data.php", true);
-//     request.send();
-//     // return questionsObject;
-// }
-
-// Console.log(getQuestion());
 function getQuestion() {
     let myRequest = new XMLHttpRequest();
     myRequest.onreadystatechange = function() {
@@ -72,7 +49,6 @@ function getQuestion() {
     }
     myRequest.open("GET", "controllers/data.php", true);
     myRequest.send();
-    /* Logging the result of the function. */
     console.log(questionsObject)
 }
 
@@ -96,7 +72,7 @@ function setNextQuetion() {
     explication.innerText = '';
     resetOptions()
     showQuestuion(randomQuestion[currentQustionIndex])
-        // showQuestuion(questionsObject[0])
+
     progress.value += 10
 
 }
@@ -141,28 +117,8 @@ function selectAnswer(e) {
             comment.innerText = "bad job"
         }
     } else {
-        // justification.push(question[currentQustionIndex].explication)
-        // questions.push(question[currentQustionIndex].question)
-        // console.log(ex)
-
-        // const para = document.createElement('p')
-        // explication.innerText = question[currentQustionIndex].explication
-        // answrsElement.appendChild(para)
-
-        // ex[0].forEach(question => {
-        //     const para = document.createElement('p')
-        //     para.innerText = question
-        //     answrsElement.appendChild(para)
-        //     console.log(para)
-
-        // });
-        // ex[1].forEach(explicatio => {
-        //     const para = document.createElement('p')
-        //     para.innerText = explicatio
-        //     answrsElement.appendChild(para)
-        //     console.log(para)
-
-        // });
+        justification.push(questionsObject[currentQustionIndex].explication)
+        questions.push(questionsObject[currentQustionIndex].question)
 
     }
     setsStatusclass(document.body, correct)
@@ -189,17 +145,22 @@ function clearStatusclass(element) {
 }
 
 function resultAnswers() {
-    ex.push(questions, justification)
+
     resultElement = document.querySelector('#you');
-    // for (let answer in ex) {
-    //     resultElement.innerText = answer[0]
-    // }
-    for (let answer of ex) { resultElement.innerText += answer[0] }
+
+    for (let answer of questions) { resultElement.innerText += answer[0] }
     for (let index = 0; index < questions.length; index++) {
 
-        // resultElement.innerText += questions[index];
-        // resultElement.innerText += questions[index];
-        document.querySelector('#parent').innerHTML += `<p>${questions[index]}</p>`
+        document.querySelector('#parent').innerHTML += `<div class="card mt-5 ">
+        <ul class="list-group list-group-flush ex">
+          <li class="list-group-item w-q">${questions[index]}</li>
+          <li class="list-group-item explication">${justification[index]}</li>
+        </ul>
+      </div>`
+
+    }
+    for (let answer of justification) { resultElement.innerText += answer[0] }
+    for (let index = 0; index < justification.length; index++) {
 
     }
 }
